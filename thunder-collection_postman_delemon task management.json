@@ -1,0 +1,197 @@
+{
+    "info": {
+        "_postman_id": "155db338-ec1b-451d-b58d-2e6c8f518eb2",
+        "name": "delemon task management",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "register user",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/register/",
+                    "path": [
+                        "register"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"username\":\"mishal\",\n  \"email\":\"mishal@gmail.com\",\n  \"password\":\"Zxcv@1234\",\n  \"confirm_password\":\"Zxcv@1234\"\n}"
+                }
+            }
+        },
+        {
+            "name": "login user",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/token/",
+                    "path": [
+                        "token"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"username\":\"sanin\",\n  \"password\":\"Zxcv@1234\"\n}"
+                }
+            }
+        },
+        {
+            "name": "View Tasks",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/task/",
+                    "path": [
+                        "task"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MzQ1ODkzLCJpYXQiOjE3MzYzNDIyOTMsImp0aSI6IjgwNDVkMTc0Y2I5YjQxOGU4ZjZhOGRjN2NhOWMxZjhiIiwidXNlcl9pZCI6MywidXNlcm5hbWUiOiJzYW5pbiIsImVtYWlsIjoic2FuaW5AZ21haWwuY29tIiwiaXNfc3VwZXJ1c2VyIjpmYWxzZX0.A6Egv5Vx8QHlNzUWaseUrgCZTm9GTv9ttnp7uxWdwRk",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Tasks",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/task/",
+                    "path": [
+                        "task"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"title\":\"task 1\",\n  \"users\":[\"2\",\"3\"]\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MzMwMzk5LCJpYXQiOjE3MzYzMjY3OTksImp0aSI6ImMyOGUzODkxZmUxNjQ4YjBiYjA2Y2NiMDc2YmZiOTc3IiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNfc3VwZXJ1c2VyIjp0cnVlfQ.kxULotNoxQyfIBFxgwCtUBm6apWOuKnPUi6_9IfmLuM",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List all users",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/users/",
+                    "path": [
+                        "users"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM2MzMxNTA3LCJpYXQiOjE3MzYzMjc5MDcsImp0aSI6ImIwYTI0ZjZjOTQyYzQ1MGNhZmNlYzU0MGEzMGMzMDBlIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaXNfc3VwZXJ1c2VyIjp0cnVlfQ.PGs4lY3URIIDzJKVTBFhBjT8DAWOPanXr54-A_Uykpk",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "update status of the task",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://127.0.0.1:8000/task/4/",
+                    "path": [
+                        "task",
+                        "4"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "127",
+                        "0",
+                        "0",
+                        "1"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"status\":\"completed\"\n}"
+                }
+            }
+        }
+    ]
+}
